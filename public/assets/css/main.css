@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:400,500,600,600italic,700);
+
+html {
+    position: relative;
+    min-height: 100%
+}
+
+body {
+    margin-bottom: 90px
+}
+
+body > .container {
+    padding: 60px 15px 0
+}
+
+.container .text-muted {
+    margin: 20px 0
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+code {
+    font-size: 80%
+}
+
+.br {
+    border: 1px solid #444
+}
+
+.navbar.navbar-default.navbar-fixed-top {
+    background: #ffffff;
+    border-bottom: 1px solid #EFF1F7
+}
+
+.activex {
+    background: #EFF1F7;
+    color: #21479C
+}
+
+.nav.navbar-nav.navbar-right a {
+    color: #444;
+    font-weight: 500
+}
+
+.nav.navbar-nav.navbar-right a:hover {
+    text-decoration: underline;
+    color: #444
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFAE00
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #6ED3CF
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #FCFCF9
+}
+
+.btn-login {
+    background-color: #FFAE00;
+    border: 1px solid #EA9C00
+}
+
+.btn-login:hover {
+    background-color: #F7A400;
+    border: 1px solid #EA9C00
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 60px;
+    background-color: #6ED3CF
+}
+
+.footer-text {
+    color: #fff
+}
+
+.footer-link {
+    color: #494949;
+    text-decoration: none;
+    margin-left: 10px
+}
+
+.footer-link:hover {
+    color: #494949;
+    text-decoration: underline
+}
+
+.mainfont {
+    font-size: 13px
+}
+
+.register-style {
+    border: 1px solid #AFAFAF;
+    padding: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 5px 0px #ababab;
+    -moz-box-shadow: 2px 2px 5px 0px #ababab;
+    box-shadow: 2px 2px 5px 0px #ababab
+}

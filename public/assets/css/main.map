@@ -1,0 +1,42 @@
+{
+	"version": 3,
+	"file": "../../../projects/mkoglasnik/scss/main.css",
+	"sources": [
+		"../../../projects/mkoglasnik/scss/main.scss",
+		"../../../projects/mkoglasnik/scss/base/_variables.scss",
+		"../../../projects/mkoglasnik/scss/base/_mixins.scss",
+		"../../../projects/mkoglasnik/scss/base/_normalize.scss",
+		"../../../projects/mkoglasnik/scss/base/_base.scss",
+		"../../../projects/mkoglasnik/scss/modules/_typography.scss",
+		"../../../projects/mkoglasnik/scss/modules/_blocks.scss",
+		"../../../projects/mkoglasnik/scss/modules/_buttons.scss",
+		"../../../projects/mkoglasnik/scss/modules/_sections.scss",
+		"../../../projects/mkoglasnik/scss/modules/_components.scss",
+		"../../../projects/mkoglasnik/scss/modules/_forms.scss",
+		"../../../projects/mkoglasnik/scss/layouts/_nav.scss",
+		"../../../projects/mkoglasnik/scss/layouts/_header.scss",
+		"../../../projects/mkoglasnik/scss/layouts/_footer.scss",
+		"../../../projects/mkoglasnik/scss/layouts/_blog.scss",
+		"../../../projects/mkoglasnik/scss/layouts/_mobile.scss"
+	],
+	"sourcesContent": [
+		"/* BASE - Base styles, variables, mixins, etc */\r\n\r\n@import 'base/_variables.scss';\r\n@import 'base/_mixins.scss';\r\n@import 'base/_normalize.scss';\r\n@import 'base/_base.scss';\r\n\r\n/* MODULES - Individual site components */\r\n\r\n@import 'modules/_typography.scss';\r\n@import 'modules/_blocks.scss';\r\n@import 'modules/_buttons.scss';\r\n@import 'modules/_sections.scss';\r\n@import 'modules/_components.scss';\r\n@import 'modules/_forms.scss';\r\n\r\n/* LAYOUTS - Page layout styles */\r\n\r\n@import 'layouts/_nav.scss';\r\n@import 'layouts/_header.scss';\r\n@import 'layouts/_footer.scss';\r\n@import 'layouts/_blog.scss';\r\n@import 'layouts/_mobile.scss';",
+		"\r\n/* Custom */\r\n$base-font-size:15px;\r\n\r\n//Navigation bar Color\r\n$nav-color: #444444;\r\n\r\n//Footer style variables\r\n\r\n$footer-bg-color: #6ed3cf;\r\n$footer-primary-color: #ffffff;\r\n$footer-secondary-color: #494949;\r\n$base-font-size:15px;\r\n$footer-link-color:#494949;\r\n\r\n//Dropdown Navigation pills color\r\n$dropdown-toggle-color:#FFAE00;\r\n$dropdown-border-color:#6ED3CF;\r\n$dropdown-backgroundcolor-hover:#FCFCF9;\r\n\r\n//Button login new styles\r\n\r\n$background-btn-color: #FFAE00;\r\n$background-btn-color-hover: #F7A400;\r\n$background-btn-border-color:#EA9C00;",
+		"",
+		"",
+		"@import url(https://fonts.googleapis.com/css?family=Cabin:400,500,600,600italic,700);\r\n/* Sticky footer styles\r\n-------------------------------------------------- */\r\nhtml {\r\n  position: relative;\r\n  min-height: 100%;\r\n}\r\nbody {\r\n  /* Margin bottom by footer height */\r\n  margin-bottom: 60px;\r\n}\r\n/* Custom page CSS\r\n-------------------------------------------------- */\r\n/* Not required for template or sticky footer method. */\r\n\r\nbody > .container {\r\n  padding: 60px 15px 0;\r\n}\r\n.container .text-muted {\r\n  margin: 20px 0;\r\n}\r\n\r\n.footer > .container {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\ncode {\r\n  font-size: 80%;\r\n}\r\n",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"/* navbar */\r\n\r\n",
+		"//Top navigation\r\n.navbar.navbar-default.navbar-fixed-top{\r\n  background: #ffffff;\r\n  border-bottom: 1px solid #EFF1F7;\r\n}\r\n.activex {\r\n  background: #EFF1F7;\r\n  color: #21479C;\r\n}\r\n.nav.navbar-nav.navbar-right a {\r\n  color:$nav-color;\r\n  font-weight: 500;\r\n}\r\n.nav.navbar-nav.navbar-right a:hover {\r\n  text-decoration: underline;\r\n  color:$nav-color;\r\n}\r\n//Navigation dropdown pills\r\n.navbar-default .navbar-toggle .icon-bar {\r\n  background-color: $dropdown-toggle-color;;\r\n}\r\n.navbar-default .navbar-toggle {\r\n  border-color: $dropdown-border-color;\r\n}\r\n.navbar-default .navbar-toggle:hover,\r\n.navbar-default .navbar-toggle:focus {\r\n  background-color: $dropdown-backgroundcolor-hover;\r\n}\r\n\r\n//Login btn class\r\n.btn-login {\r\n  background-color:$background-btn-color;\r\n  border:1px solid $background-btn-border-color;\r\n}\r\n.btn-login:hover {\r\n  background-color:$background-btn-color-hover;\r\n  border:1px solid $background-btn-border-color;\r\n}",
+		"/* Footer style */\r\n\r\n.footer {\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: 100%;\r\n  /* Set the fixed height of the footer here */\r\n  min-height: 60px;\r\n  background-color: #6ED3CF;\r\n}\r\n.footer-text {\r\n  color: $footer-primary-color;\r\n}\r\n.footer-link {\r\n  color: $footer-link-color;\r\n  text-decoration: none;\r\n  margin-left: 10px;\r\n}\r\n.footer-link:hover {\r\n  color: $footer-link-color;\r\n  text-decoration: underline;\r\n}",
+		"",
+		""
+	],
+	"mappings": "AAAA,gDAAgD;ACChD,YAAY;AGDZ,OAAO,CAAC,4EAAI;AACZ;qDACqD;;AACrD,AAAA,IAAI,CAAC;EACH,QAAQ,EAAE,QAAS;EACnB,UAAU,EAAE,IAAK;CAClB;;;AACD,AAAA,IAAI,CAAC;EACH,oCAAoC;EACpC,aAAa,EAAE,IAAK;CACrB;;AACD;qDACqD;AACrD,wDAAwD;;AAExD,AAAO,IAAH,GAAG,UAAU,CAAC;EAChB,OAAO,EAAE,WAAY;CACtB;;;AACD,AAAW,UAAD,CAAC,WAAW,CAAC;EACrB,MAAM,EAAE,MAAO;CAChB;;;AAED,AAAU,OAAH,GAAG,UAAU,CAAC;EACnB,aAAa,EAAE,IAAK;EACpB,YAAY,EAAE,IAAK;CACpB;;;AAED,AAAA,IAAI,CAAC;EACH,SAAS,EAAE,GAAI;CAChB;;AJtBD,0CAA0C;AAS1C,kCAAkC;AWhBlC,YAAY;;ACCZ,AAAsB,OAAf,AAAA,eAAe,AAAA,iBAAiB,CAAA;EACrC,UAAU,EAAE,OAAQ;EACpB,aAAa,EAAE,iBAAkB;CAClC;;;AACD,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,OAAQ;EACpB,KAAK,EAAE,OAAQ;CAChB;;;AACD,AAA6B,IAAzB,AAAA,WAAW,AAAA,aAAa,CAAC,CAAC,CAAC;EAC7B,KAAK,EXLK,OAAO;EWMjB,WAAW,EAAE,GAAI;CAClB;;;AACD,AAA8B,IAA1B,AAAA,WAAW,AAAA,aAAa,CAAC,CAAC,AAAA,MAAM,CAAC;EACnC,eAAe,EAAE,SAAU;EAC3B,KAAK,EXVK,OAAO;CWWlB;;;AAED,AAA+B,eAAhB,CAAC,cAAc,CAAC,SAAS,CAAC;EACvC,gBAAgB,EXHK,OAAO;CWI7B;;;AACD,AAAgB,eAAD,CAAC,cAAc,CAAC;EAC7B,YAAY,EXLS,OAAO;CWM7B;;;AACD,AAA8B,eAAf,CAAC,cAAc,AAAA,MAAM;AACpC,AAA8B,eAAf,CAAC,cAAc,AAAA,MAAM,CAAC;EACnC,gBAAgB,EXRc,OAAO;CWStC;;;AAGD,AAAA,UAAU,CAAC;EACT,gBAAgB,EXTK,OAAO;EWU5B,MAAM,EAAC,GAAG,CAAC,KAAK,CXRW,OAAO;CWSnC;;;AACD,AAAU,UAAA,AAAA,MAAM,CAAC;EACf,gBAAgB,EXZW,OAAO;EWalC,MAAM,EAAC,GAAG,CAAC,KAAK,CXZW,OAAO;CWanC;;ACrCD,kBAAkB;;AAElB,AAAA,OAAO,CAAC;EACN,QAAQ,EAAE,QAAS;EACnB,MAAM,EAAE,CAAE;EACV,KAAK,EAAE,IAAK;EACZ,6CAA6C;EAC7C,UAAU,EAAE,IAAK;EACjB,gBAAgB,EAAE,OAAQ;CAC3B;;;AACD,AAAA,YAAY,CAAC;EACX,KAAK,EZDgB,OAAO;CYE7B;;;AACD,AAAA,YAAY,CAAC;EACX,KAAK,EZDY,OAAO;EYExB,eAAe,EAAE,IAAK;EACtB,WAAW,EAAE,IAAK;CACnB;;;AACD,AAAY,YAAA,AAAA,MAAM,CAAC;EACjB,KAAK,EZNY,OAAO;EYOxB,eAAe,EAAE,SAAU;CAC5B",
+	"names": []
+}

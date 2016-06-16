@@ -1,0 +1,81 @@
+/* Custim styles
+-------------------------------------------------- */
+.br {
+    border: 1px solid;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    min-height: 40px;
+    background-color:#cc006a;
+}
+.footer-text {
+    color: #ffffff;
+}
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 60px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
+
+
+/*
+--------------------------------------------------------
+* Main Navigation Style
+*/
+.navbar.navbar-default.navbar-fixed-top{
+    background: #ffffff;
+    border-bottom: 1px solid #EFF1F7;
+}
+.activex {
+    background: #EFF1F7;
+    color: #21479C;
+}
+.nav.navbar-nav.navbar-right a {
+    color: #21479C;
+}
+.nav.navbar-nav.navbar-right a:hover {
+    text-decoration: underline;
+    color: #21479C;
+}
+/*
+--------------------------------------------------------
+* Main Navigation Style End
+*/
