@@ -1,8 +1,5 @@
 ﻿﻿@extends('admin')
-
-
 @section('title', '| Управувачки Панел - Градови')
-
 @section('content')
     <section class="content-header">
         <h1>
@@ -21,11 +18,9 @@
         <div class="row">
           <div class="col-md-6">
               @if(Session::has('success'))
-
                   <div class="alert alert-success" role="alert">
                       <strong>Success:</strong> {{ Session::get('success') }}
                   </div>
-
               @endif
               @if (count($errors) > 0)
                   <div class="alert alert-danger">
