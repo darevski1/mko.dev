@@ -32,7 +32,7 @@
                   </div>
               @endif
 
-              {!! Form::open(array('route' => 'city.store', 'data-parsley-validate' => '')) !!}
+              {!! Form::open(array('route' => 'city.store')) !!}
 
               {{ Form::label('cityname', 'Внеси нов град:') }}
               {{ Form::text('cityname', null, array('class' => 'form-control', 'maxlength' => '255')) }}

@@ -41,3 +41,7 @@ Route::resource('city', 'CityController');
 Route::resource('category', 'CategoryController');
 #Advert
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

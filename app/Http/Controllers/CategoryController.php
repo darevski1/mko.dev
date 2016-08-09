@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Category;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use Session;
 class CategoryController extends Controller
 {
     /**
@@ -26,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.category');
     }
 
     /**
@@ -37,7 +40,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+           'title' => 'required',
+        ]);
+
+        if($validator->fails())
+        {
+            return redirect('category')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        else{
+            $category = new Category;
+            $category->title = $request->title;
+            $category->save();
+            Session::flash('success', 'Успешно додаден нова Категорија!!!!');
+            return redirect('category');
+        }
     }
 
     /**
@@ -48,7 +67,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -59,7 +78,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view ('pages.admin.edit')->withCategory($category);
     }
 
     /**
@@ -71,7 +91,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
