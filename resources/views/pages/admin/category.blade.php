@@ -57,8 +57,10 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Category</th>
-                                <th>Edit</th>
+                                <th>Категорија</th>
+                                <th>Дата на Внесување</th>
+                                <th>Дата на Промена</th>
+                                <th>Промени</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -66,6 +68,8 @@
                                 <tr>
                                     <td>{{$cat -> id}}</td>
                                     <td>{{$cat -> title}}</td>
+                                    <td>{{date("h:i d-m-Y", strtotime($cat->created_at))}}</td>
+                                    <td>{{date("h:i d-m-Y", strtotime($cat->updated_at))}}</td>
                                     <td>
                                         {{ Form::open(['method' => 'GET', 'route' => ['category.edit', $cat->id]]) }}
                                         {{ Form::submit('Edit', ['class' => 'btn btn-info ']) }}

@@ -59,7 +59,9 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>City</th>
+                                    <th>Град</th>
+                                    <th>Промени</th>
+                                    <th>Избриши</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -67,6 +69,14 @@
                                 <tr>
                                     <td>{{$c-> id}}</td>
                                     <td>{{$c-> cityname}}</td>
+                                    <td>
+                                        {{ Form::open(['method' => 'GET', 'route' => ['city.edit', $c->id]]) }}
+                                        {{ Form::submit('Edit', ['class' => 'btn btn-info ']) }}
+                                        {{ Form::close() }}
+
+
+                                    </td>
+                                    <td></td>
                                 </tr>
                                 @endforeach
                                 </tbody>

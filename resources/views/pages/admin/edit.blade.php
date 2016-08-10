@@ -23,7 +23,7 @@
         </div>
         </div>
 
-        {!! Form::open(['route' => ['category.update', $category->id], 'method' => 'delete']) !!}
+        {!! Form::model($category, ['route' => ['category.update', $category->id], 'method' => 'PUT']) !!}
         {{ Form::label('title', 'Промени го името на категоријата')}}
         {{ Form::text('title', null, array('class' => 'form-control', 'maxlength' => '255')) }}
 

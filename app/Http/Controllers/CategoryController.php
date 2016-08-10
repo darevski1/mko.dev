@@ -91,7 +91,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+       //Validate data
 
+        $this->validate($request, array(
+            'title'=> 'required'
+        ));
+        //Save Data
+        $category = Category::find($id);
+        $category->title = $request->input('title');
+        $category->save();
+
+        //Session message
+        Session::flash('success', 'Успешно променета категорија');
+        //Rediredt
+        return redirect('category')->withCategory($category);
     }
 
     /**

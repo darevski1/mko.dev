@@ -50,9 +50,9 @@ class CityController extends Controller
                 ->withInput();
         }
         else{
-            $post = new City;
-            $post->cityname = $request->cityname;
-            $post->save();
+            $city = new City;
+            $city->cityname = $request->cityname;
+            $city->save();
             Session::flash('success', 'Успешно додаден нов Град!!!!');
             return redirect('city');
         }
@@ -69,7 +69,7 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -80,7 +80,8 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        //
+        $city = City::find($id);
+        return view('pages.admin.editcity')->withCity($city);
     }
 
     /**
@@ -92,7 +93,18 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'cityname'=>'required'
+        ));
+        $city = City::find($id);
+        $city->cityname = $request->input('cityname');
+        $city->save();
+
+        Session::flash('success', 'Успешно Променет Град!!!!');
+
+        return redirect('city');
+
+
     }
 
     /**
