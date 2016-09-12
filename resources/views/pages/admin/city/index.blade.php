@@ -76,7 +76,11 @@
 
 
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        {{ Form::open(['method' => 'DELETE', 'route' => ['city.destroy', $c->id]]) }}
+                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger ']) }}
+                                        {{ Form::close() }}
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>

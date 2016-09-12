@@ -24,10 +24,10 @@
         </div>
 
         {!! Form::model($category, ['route' => ['category.update', $category->id], 'method' => 'PUT']) !!}
-        {{ Form::label('title', 'Промени го името на категоријата')}}
-        {{ Form::text('title', null, array('class' => 'form-control', 'maxlength' => '255')) }}
-
-        {{ Form::submit('Промени Категорија', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
+            {{ Form::label('title', 'Промени го името на категоријата')}}
+            {{ Form::text('title', null, array('class' => 'form-control', 'maxlength' => '255')) }}
+            {{ Form::submit('Промени Категорија', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
         {!! Form::close() !!}
+
     </section>
 @endsection

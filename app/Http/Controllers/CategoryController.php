@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Category;
+use App\Subcategory;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Session;
@@ -19,7 +20,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::All();
-        return view('pages.admin.category')->withcategory($category);
+        return view('pages.admin.category.index')->withcategory($category);
     }
 
     /**
@@ -79,7 +80,9 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view ('pages.admin.edit')->withCategory($category);
+        return view ('pages.admin.category.edit')->withCategory($category);
+
+
     }
 
     /**

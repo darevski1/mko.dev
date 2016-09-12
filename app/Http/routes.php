@@ -19,11 +19,8 @@ Route::get('/', function () {
 
 #Static Pages
 Route::get('terms', 'AboutController@getTerms');
-
 Route::get('privacy', 'PrivacyController@getPrivacy');
-
 Route::get('help','HelpController@index');
-
 Route::get('about', 'AboutController@getAbout');
 
 
@@ -35,11 +32,13 @@ Route::get('adminds', 'AdminController@index');
 #CityController
 Route::resource('city', 'CityController');
 
-
-
-
 Route::resource('category', 'CategoryController');
 #Advert
+
+#Model Controller
+
+Route::resource('subcategory', 'SubcategoryController');
+
 
 
 Route::auth();

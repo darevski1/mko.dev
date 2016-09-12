@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\City;
-use Illuminate\Support\Facades\Validator;
+use App\Subcategory;
 use Session;
-
-class CityController extends Controller
+use App\Category;
+class SubcategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        $city = City::All();
-        return view('pages.admin.city.index')->withcity($city);
+        $categories = Category::all();
+        return view('pages.admin.subcategory.index')->withCategories($categories);
     }
 
     /**
@@ -29,7 +28,8 @@ class CityController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.city.index');
+        $subcategory = Subcategory::orderBy('id', 'desc')->paginate(5);
+        return view('subcategory.index')->withSubcategory($subcategory);
     }
 
     /**
@@ -40,26 +40,21 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'cityname' => 'required',
-        ]);
+        $this->validate($request, array(
+            'name' => 'required|max:255',
+            'cat_id'=> 'required|integer',
 
-        if ($validator->fails()) {
-            return redirect('city')
-                ->withErrors($validator)
-                ->withInput();
-        }
-        else{
-            $city = new City;
-            $city->cityname = $request->cityname;
-            $city->save();
-            Session::flash('success', 'Успешно додаден нов Град!!!!');
-            return redirect('city.index');
-        }
+        ));
 
-        // Store the blog post...
+        $subcategory = new Subcategory();
+        $subcategory->name = $request->name;
+        $subcategory->cat_id = $request->cat_id;
+        $subcategory->save();
+
+        Session::flash('success', 'Успешно додадена нова Под Категорија!!!!');
+        return redirect('subcategory');
+
     }
-
 
     /**
      * Display the specified resource.
@@ -80,8 +75,7 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        $city = City::find($id);
-        return view('pages.admin.city.editcity')->withCity($city);
+        //
     }
 
     /**
@@ -93,18 +87,7 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, array(
-            'cityname'=>'required'
-        ));
-        $city = City::find($id);
-        $city->cityname = $request->input('cityname');
-        $city->save();
-
-        Session::flash('success', 'Успешно Променет Град!!!!');
-
-        return redirect('city');
-
-
+        //
     }
 
     /**
@@ -115,10 +98,6 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        $city = City::find($id);
-        $city->delete();
-
-        Session::flash('success', 'Успешно Избришан Град!!!!');
-        return redirect('city')->withPost($city);
+        //
     }
 }
