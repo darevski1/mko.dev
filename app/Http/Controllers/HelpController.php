@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Help;
+use Illuminate\Support\Facades\Validator;
+use Session;
 class HelpController extends Controller
 {
     /**
@@ -15,8 +17,8 @@ class HelpController extends Controller
      */
     public function index()
     {
-        $help = Help::all();
-        return view('pages.about.help')->withHelp($help);
+        $helper = Help::all();
+        return view('pages.admin.help.index')->withHelper($helper);
     }
 
     /**
@@ -26,7 +28,7 @@ class HelpController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -37,7 +39,27 @@ class HelpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'answer' => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('help/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $helper = new Help();
+        $helper -> title = $request -> title;
+        $helper -> answer = $request ->answer;
+        $helper -> save();
+
+
+        Session::flash('success', 'Успешно додадено ново прашање!!!!');
+        return redirect('help/create');
+
     }
 
     /**
@@ -48,7 +70,8 @@ class HelpController extends Controller
      */
     public function show($id)
     {
-        //
+        $helper = Help::find($id);
+        return view('pages.admin.help.index')->with($helper);
     }
 
     /**
@@ -59,7 +82,7 @@ class HelpController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -71,7 +94,18 @@ class HelpController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'title' => 'required',
+            'answer' => 'required'
+        ));
+        $helper = Help::find($id);
+        $helper -> title = $request->input('title');
+        $helper -> answer = $request->input('answer');
+        $helper->save();
+
+        Session::flash('success', 'Успешно променто прашање!!!!');
+        return redirect('help/create');
+
     }
 
     /**
@@ -82,6 +116,15 @@ class HelpController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $helper = Help::find($id);
+        $helper->delete();
+
+        Session::flash('succes', 'Успешно избришано прашање');
+        return redirect('help/create');
+    }
+    public function getData ()
+    {
+        $help = Help::all();
+        return view('pages.about.help')->withHelp($help);
     }
 }

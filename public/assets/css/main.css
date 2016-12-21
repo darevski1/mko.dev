@@ -113,3 +113,6 @@ code {
     -moz-box-shadow: 2px 2px 5px 0px #ababab;
     box-shadow: 2px 2px 5px 0px #ababab
 }
+.blockme {
+    display: block;
+}

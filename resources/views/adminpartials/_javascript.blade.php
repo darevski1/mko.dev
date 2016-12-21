@@ -30,9 +30,13 @@
 <script src="{{asset('assets/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
 <script src="{{asset('assets/plugins/fastclick/fastclick.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
+
 <!-- AdminLTE App -->
 <script src="{{asset('assets/dist/js/app.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('assets/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('assets/dist/js/demo.js')}}"></script>
+<script src="{{asset('assets/js/ckeditor.js')}}"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>

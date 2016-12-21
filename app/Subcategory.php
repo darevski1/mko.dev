@@ -10,4 +10,7 @@ class Subcategory extends Model
     {
         return $this->belongsTo('App\Category');
     }
+    public  function carmodel(){
+        return $this->belongsTo('App\CarModel');
+    }
 }

@@ -19,5 +19,6 @@
 </div>
  {{-- Include java script files --}}
 @include('adminpartials._javascript')
+@yield('page-script')
 </body>
 </html>

@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Subcategory;
-use Session;
-use App\Category;
 use App\CarModel;
-class SubcategoryController extends Controller
+use Session;
+
+class CarmodelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,10 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('title', 'ASC')->get();
         $subcategory = Subcategory::all();
-        return view('pages.admin.subcategory.index')->withCategories($categories)->withSubcategory($subcategory);
+        $carmodel = CarModel::all();
+        return view('pages.admin.carmodels.index')->withCarmodel($carmodel)->withSubcategory($subcategory);
+
     }
 
     /**
@@ -30,8 +31,7 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-//        $subcategory = Subcategory::orderBy('id', 'desc')->paginate(5);
-//        return view('subcategory.index')->withSubcategory($subcategory);
+        //
     }
 
     /**
@@ -42,19 +42,20 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, array(
-            'name' => 'required|max:255',
-            'cat_id'=> 'required|integer',
+            'car_model' => 'required|max:255',
+            'subcat_id'=> 'required|integer',
 
         ));
 
-        $subcategory = new Subcategory();
-        $subcategory->name = $request->name;
-        $subcategory->cat_id = $request->cat_id;
-        $subcategory->save();
+        $carmodel = new CarModel();
+        $carmodel->car_model = $request->car_model;
+        $carmodel->subcat_id = $request->subcat_id;
+        $carmodel->save();
 
         Session::flash('success', 'Успешно додадена нова Под Категорија!!!!');
-        return redirect('subcategory');
+        return redirect('carmodels');
 
     }
 
@@ -66,7 +67,7 @@ class SubcategoryController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**

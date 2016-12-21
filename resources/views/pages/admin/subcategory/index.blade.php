@@ -56,11 +56,36 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <div class="col-md-8">
-
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Bordered Table</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Под Категорија </th>
+                                    <th>UID на категорија</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($subcategory as $subcat)
+                                    <tr>
+                                        <td>{{$subcat -> id}}</td>
+                                        <td>{{$subcat -> name}}</td>
+                                        <td>{{$subcat -> cat_id}}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     @endsection

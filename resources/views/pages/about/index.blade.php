@@ -1,18 +1,17 @@
-@extends('main')
-
-@section('title', '| Help page')
+﻿@extends('main')
+@section('title', '| За нас')
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            @foreach($helper as $help)
+            @foreach($aboutus as $about)
                 <div class="page-header">
-                    <h3>{{$help -> title}}</h3>
+                    {{$about -> title}}
                 </div>
                 <p class="lead mainfont">
-                    {{$help -> answer }}
+                    {{$about -> description}}
                 </p>
             @endforeach
         </div>
     </div>
-    @endsection
+@endsection

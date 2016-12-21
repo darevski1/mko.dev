@@ -19,10 +19,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::All();
+//        $category= Category::all(); da gi prikaze site od baza
+        $category = Category::orderBy('title', 'ASC')->get();;
         return view('pages.admin.category.index')->withcategory($category);
-    }
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -119,5 +120,10 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getCategory(){
+
+        $category = DB::table('categories')->count();
+        return view('pages.admin.main')->with('categories', $category);
     }
 }

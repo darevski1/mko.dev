@@ -30,19 +30,22 @@
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="{{url('category')}}"><i class="fa fa-circle-o"></i> Category</a></li>
-                    <li class="active"><a href="{{url('city')}}"><i class="fa fa-circle-o"></i> City</a></li>
-                    <li class="active"><a href="{{url('subcategory')}}"><i class="fa fa-circle-o"></i>Subcategory</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    <li class="active"><a href="{{url('category')}}"><i class="fa fa-sitemap"></i>Категории</a></li>
+                    <li class="active"><a href="{{url('city')}}"><i class="fa fa-star"></i>Градови</a></li>
+                    <li class="active"><a href="{{url('subcategory')}}"><i class="fa fa-columns"></i>Под Категории</a></li>
+                    <li class="active"><a href="{{url('carmodels')}}"><i class="fa fa-circle-o"></i>Модели на Автомобили</a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-share"></i> <span>Multilevel</span>
+                    <i class="fa fa-share"></i> <span>Информации</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                    <li class="active"><a href="{{url('about/create')}}"><i class="fa fa-th-large"></i>За Нас</a></li>
+                    <li class="active"><a href="{{url('terms/create')}}"><i class="fa fa-indent"></i>Услови</a></li>
+                    <li class="active"><a href="{{url('help/create')}}"><i class="fa fa-question-circle"></i>Помош</a></li>
+
                     <li>
                         <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">

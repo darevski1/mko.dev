@@ -11,6 +11,7 @@
             <li class="active">Категори</li>
         </ol>
         <div class="row">
+
             <div class="col-md-12">
                 <hr style="width: 100%; color: black; height: 1px; background-color:#3C8DBC;" />
             </div>
@@ -46,12 +47,27 @@
         </div>
     </div>
         <div class="row">
+            <div class="col-md-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-tag" aria-hidden="true"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Вкупени Број на Категории</span>
+                        <span class="info-box-number">{{$category->count()}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Листа На Категории</h3>
                     </div>
                     <!-- /.box-header -->
+
                     <div class="box-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>

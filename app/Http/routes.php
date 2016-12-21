@@ -18,29 +18,54 @@ Route::get('/', function () {
 
 
 #Static Pages
-Route::get('terms', 'AboutController@getTerms');
+Route::get('terms', 'TermsController@getTerms');
+Route::get('terms/create', 'TermsController@showTerms');
+Route::post('terms/create/{id}',
+    [
+        'as' => 'terms/create/{id}', 'uses' => 'TermsController@update'
+    ]);
 Route::get('privacy', 'PrivacyController@getPrivacy');
-Route::get('help','HelpController@index');
-Route::get('about', 'AboutController@getAbout');
+Route::get('privacy/create',
+    [
+        'as' => '', 'uses' => 'PrivacyController@showPrivacy'
+]);
 
+Route::resource('help/create','HelpController');
+
+
+
+Route::get('about', 'AboutController@index');
+Route::get('about/create',
+    [
+        'as' => 'about/create', 'uses' => 'AboutController@show'
+    ]);
+Route::post('about/create/{id}',
+    [
+    'as' => 'about/create/{id}', 'uses' => 'AboutController@update'
+    ]);
 
 # Admin panel pages
 
 
 Route::get('adminds', 'AdminController@index');
+Route::get('adminds', 'AdminController@getCategory');
 
 #CityController
 Route::resource('city', 'CityController');
-
+#Category
 Route::resource('category', 'CategoryController');
-#Advert
-
 #Model Controller
-
 Route::resource('subcategory', 'SubcategoryController');
-
-
-
 Route::auth();
-
 Route::get('/home', 'HomeController@index');
+#User Profile
+Route::get('myprofile', 'UserProfileController@index');
+
+//Car Brands
+Route::resource('carmodels', 'CarmodelsController');
+
+
+
+
+
+
