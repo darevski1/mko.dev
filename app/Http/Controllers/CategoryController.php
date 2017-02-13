@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-//        $category= Category::all(); da gi prikaze site od baza
+//      $category= Category::all(); da gi prikaze site od baza
         $category = Category::orderBy('title', 'ASC')->get();;
         return view('pages.admin.category.index')->withcategory($category);
 

@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Subcategory;
-use App\CarModel;
 use App\Carbrand;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
 use Session;
-
-class CarmodelsController extends Controller
+class CarbrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +17,7 @@ class CarmodelsController extends Controller
     public function index()
     {
         $carbrands = Carbrand::all();
-        $carmodel = CarModel::all();
-        return view('pages.admin.carmodels.index')->withCarmodel($carmodel)->withCarbrands($carbrands);
+        return view('pages.admin.carbrand.index')->withCarbrands($carbrands);
 
     }
 
@@ -43,21 +39,17 @@ class CarmodelsController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, array(
-            'car_model' => 'required|max:255',
-            'carbrand_id'=> 'required|integer',
+            'name' => 'required|max:255',
 
         ));
 
-        $carmodel = new CarModel();
-        $carmodel->car_model = $request->car_model;
-        $carmodel->carbrand_id = $request->carbrand_id;
-        $carmodel->save();
+        $carbrands = new Carbrand();
+        $carbrands->name = $request->name;
+        $carbrands->save();
 
         Session::flash('success', 'Успешно додадена нова Под Категорија!!!!');
-        return redirect('carmodels');
-
+        return redirect('carbrand');
     }
 
     /**

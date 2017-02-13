@@ -60,12 +60,21 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 #User Profile
 Route::get('myprofile', 'UserProfileController@index');
-
 //Car Brands
 Route::resource('carmodels', 'CarmodelsController');
+Route::resource('carbrand', 'CarbrandController');
+Route::resource('property', 'PropertyController');
 
 
 
+Route::get('advert',
+    [
+    'as' => 'advert',  'uses' => 'AdvertsController@getCat'
+]);
+Route::get('advert/{id}',
+    [
+    'as' => 'advert/{id}', 'uses' => 'AdvertsController@getSubcategory',
+]);
 
 
 

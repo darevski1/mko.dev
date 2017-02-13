@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Subcategory;
-use App\CarModel;
-use App\Carbrand;
+use App\Property;
+use App\Category;
 use Session;
-
-class CarmodelsController extends Controller
+class PropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +17,9 @@ class CarmodelsController extends Controller
      */
     public function index()
     {
-        $carbrands = Carbrand::all();
-        $carmodel = CarModel::all();
-        return view('pages.admin.carmodels.index')->withCarmodel($carmodel)->withCarbrands($carbrands);
+        $categories = Category::all();
+        $property = Property::all();
+        return view('pages.admin.property.index')->withProperty($property)->withCategories($categories);
 
     }
 
@@ -43,20 +41,19 @@ class CarmodelsController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, array(
-            'car_model' => 'required|max:255',
-            'carbrand_id'=> 'required|integer',
-
+            'name' => 'required',
+            'property_id'=> 'required|integer',
         ));
 
-        $carmodel = new CarModel();
-        $carmodel->car_model = $request->car_model;
-        $carmodel->carbrand_id = $request->carbrand_id;
-        $carmodel->save();
+        $property = new Property();
+        $property->name = $request->name;
+        $property->property_id = $request->property_id;
+        $property->save();
 
-        Session::flash('success', 'Успешно додадена нова Под Категорија!!!!');
-        return redirect('carmodels');
+
+        Session::flash('success', 'Успешно додадена нова недвижност!!!!');
+        return redirect('property');
 
     }
 

@@ -3,12 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Subcategory extends Model
+use App\Category;
+class Advert extends Model
 {
-    public function category()
-    {
+    public function getCategory(){
         return $this->belongsTo('App\Category');
     }
-
 }

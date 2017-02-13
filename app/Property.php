@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Subcategory extends Model
+class Property extends Model
 {
-    public function category()
-    {
+    public function categories(){
         return $this->belongsTo('App\Category');
     }
-
 }

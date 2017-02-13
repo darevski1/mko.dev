@@ -86,11 +86,21 @@
                                 </tbody>
 
                             </table>
+                            <?php
+                            $var = 1;
+                            $var1 = 0;
+                            while($var < 100)
+                            {
+                               echo $var1 . $var ++ . "<br/>";
+                            }
+                            ?>
                         </div>
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
                </div>
+
                 </div>
+
     </section>
 @endsection

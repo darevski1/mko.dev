@@ -9,7 +9,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <title>mkOglasnik.mk @yield('title')</title>
 <!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}" >
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
 <!-- Custom styles for this template -->
 <link href="assets/css/main.css" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="js/ie-emulation-modes-warning.js"></script>

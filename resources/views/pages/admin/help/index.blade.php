@@ -67,7 +67,7 @@
                                             <th>{{$help -> id}}</th>
                                             <th>{{$help -> title}}</th>
                                             <th>
-                                                <button type="button" class="btn btn-info pull-right"><i class="fa fa-pencil" aria-hidden="true"></i> Промени</button>
+                                                <button type="button" class="btn btn-default pull-right" style="margin-left: 10px;"><i class="fa fa-pencil" aria-hidden="true"></i> Промени</button>
                                                 <button type="button" id="showmenu" class="btn btn-danger pull-right"><i class="fa fa-trash" aria-hidden="true"></i> Избриши</button>
                                             </th>
                                         </tr>

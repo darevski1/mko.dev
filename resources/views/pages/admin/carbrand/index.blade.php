@@ -1,8 +1,6 @@
-﻿﻿@extends('admin')
+﻿@extends('admin')
 @section('title', '| Управувачки Панел - Модели на автомобили')
 @section('content')
-
-
     <section class="content-header">
         <h1>
             Управувачки Панел - Категории
@@ -36,16 +34,10 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                {!!Form::open(array('route' => 'carmodels.store'))!!}
-                {{Form::label('car_model', 'Име на модел на автомобил')}}
-                {{Form::text('car_model', null, array('class' => 'form-control', 'maxlength' => '255'))}}
-                {{Form::label('carbrand_id', 'Подкатегорија:')}}
-                <select name="carbrand_id" id="" class="form-control">
-                    @foreach($carbrands as $carbrand)
-                        <option value="{{$carbrand->id}}">{{$carbrand->name}}</option>
-                    @endforeach
-                </select>
-                {{Form::submit('Додади нов модел!', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
+                {!!Form::open(array('route' => 'carbrand.store'))!!}
+                {{Form::label('name', 'Марка на автомобил')}}
+                {{Form::text('name', null, array('class' => 'form-control', 'maxlength' => '255'))}}
+                {{Form::submit('Додади нова марка!', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
                 {{Form::close()}}
             </div>
             <div class="col-md-6">
@@ -68,22 +60,20 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Модел на Автомобил</th>
-                                <th>UID на под Марка на возило</th>
+                                <th>Марка на Автомобил</th>
                                 <th>Дата на Внесување</th>
                                 <th>Дата на Промена</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($carmodel as $model)
+                            @foreach($carbrands as $carbrand)
                                 <tr>
-                                    <td>{{$model -> id}}</td>
-                                    <td>{{$model -> car_model}}</td>
-                                    <td>{{$model -> carbrand_id}}</td>
-                                    <td>{{$model -> created_at}}</td>
-                                    <td>{{$model -> updated_at}}</td>
+                                    <td>{{$carbrand -> id}}</td>
+                                    <td>{{$carbrand -> name}}</td>
+                                    <td>{{$carbrand -> created_at}}</td>
+                                    <td>{{$carbrand -> updated_at }}</td>
                                 </tr>
-                            @endforeach
+                        @endforeach
                             </tbody>
 
                         </table>
@@ -95,4 +85,5 @@
         </div>
     </section>
 
- @endsection
+
+@endsection

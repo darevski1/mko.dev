@@ -54,12 +54,25 @@
                 <hr style="width: 100%; color: black; height: 1px; background-color:#3C8DBC;" />
             </div>
         </div>
+
+            <div class="col-md-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-tag" aria-hidden="true"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Вкупени Број на Под категории</span>
+                        <span class="info-box-number">{{$subcategory ->count()}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
         <div class="row">
             <div class="col-xs-12">
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Bordered Table</h3>
+                            <h3 class="box-title">Листа под внесени подкатегории</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">

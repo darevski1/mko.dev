@@ -33,7 +33,10 @@
                     <li class="active"><a href="{{url('category')}}"><i class="fa fa-sitemap"></i>Категории</a></li>
                     <li class="active"><a href="{{url('city')}}"><i class="fa fa-star"></i>Градови</a></li>
                     <li class="active"><a href="{{url('subcategory')}}"><i class="fa fa-columns"></i>Под Категории</a></li>
+                    <li class="active"><a href="{{url('carbrand')}}"><i class="fa fa-circle-o"></i>Марка на Автомобили</a></li>
                     <li class="active"><a href="{{url('carmodels')}}"><i class="fa fa-circle-o"></i>Модели на Автомобили</a></li>
+                    <li class="active"><a href="{{url('property')}}"><i class="fa fa-circle-o"></i>Недвижности</a></li>
+
                 </ul>
             </li>
             <li class="treeview">
